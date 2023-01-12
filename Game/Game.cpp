@@ -57,6 +57,16 @@ Game::~Game()
 	DeleteGO(gameBGM);
 	//背景を削除する。
 	DeleteGO(backGround);
+
+	//☆を削除する
+	//ここの"FindGOs"は必要なので、
+	//消さないでください。
+	auto stars = FindGOs<Star>("star");
+	for (auto star : stars)
+	{
+		DeleteGO(star);
+	}
+
 }
 
 //更新処理。
